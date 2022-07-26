@@ -1,0 +1,117 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    height: 72px;
+    background-color: black;
+    color: white;
+
+    img {
+        width: 120px;
+        height: 35px;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        width: 65%;
+
+        @media screen and (max-width: 1100px) {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 20;
+
+            color: white;
+            background-color: black;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        .active {
+            display: flex;
+        }
+    }
+
+    &__bag {
+        width: 40px;
+        height: 37px;
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        &-count {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            position: relative;
+
+            z-index: 2;
+            top: -24px;
+            left: 21px;
+
+            font-size: 12px;
+            background-color: #FCB500;
+            color: black;
+            text-align: center;
+        }
+    }
+
+    .menu-button-container {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 22;
+    }
+    
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: white;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+
+    .menu-button.active {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    .menu-button::before {
+        content: '';
+        margin-top: -8px;
+    }
+
+    .active.menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+    }
+      
+    .menu-button::after {
+        content: '';
+        margin-top: 8px;
+    }
+
+    .active.menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+    }
+}
