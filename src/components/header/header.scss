@@ -70,13 +70,19 @@
     }
 
     .menu-button-container {
-        display: block;
+        display: none;
         width: 30px;
         cursor: pointer;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 22;
+    }
+
+    @media screen and (max-width: 1100px) {
+        .menu-button-container {
+            display: block;
+        }
     }
     
     .menu-button,

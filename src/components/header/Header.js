@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import logo from '../../resources/img/logo.png';
 import headerbasket from '../../resources/img/header-basket.png';
@@ -8,10 +8,6 @@ const Header = () => {
     const [navActive, setNavActive] = useState(false);
     const navClasses = navActive ? 'header__nav active' : 'header__nav';
     const menuButtonClasses = navActive ? 'menu-button active' : 'menu-button';
-
-    useEffect(() => {
-        console.log(navActive)
-    }, [navActive])
 
     return (
         <div className="header">
